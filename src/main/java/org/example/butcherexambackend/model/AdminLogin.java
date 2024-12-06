@@ -6,8 +6,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "admin_credentials")
-public class AdminCredentials {
+@Table(name = "admin_login")
+public class AdminLogin {
 
     @Id
     @Column(nullable = false, unique = true)
@@ -20,10 +20,10 @@ public class AdminCredentials {
     private String role;
 
     // Constructors
-    public AdminCredentials() {
+    public AdminLogin() {
     }
 
-    public AdminCredentials(String username, String password, String role) {
+    public AdminLogin(String username, String password, String role) {
         this.username = username;
         this.password = password;
         this.role = role;
