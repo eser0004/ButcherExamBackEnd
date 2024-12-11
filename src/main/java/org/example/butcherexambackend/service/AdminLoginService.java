@@ -25,4 +25,11 @@ public class AdminLoginService {
 
         return false; // Invalid login credentials
     }
+    // Method to save a new AdminLogin (for creating an admin user)
+    public AdminLogin saveAdminLogin(String username, String password) {
+        AdminLogin adminLogin = new AdminLogin();
+        adminLogin.setUsername(username);
+        adminLogin.setPassword(password);
+        return adminLoginRepository.save(adminLogin);
+    }
 }
