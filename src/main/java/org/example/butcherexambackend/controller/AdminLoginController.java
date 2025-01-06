@@ -30,4 +30,10 @@ public class AdminLoginController {
             return ResponseEntity.status(401).body("Invalid credentials");
         }
     }
+
+    @PostMapping("/register")
+    public ResponseEntity<String> registerAdmin(@RequestBody AdminLogin newAdmin) {
+        AdminLogin savedAdmin = adminLoginService.saveAdminLogin(newAdmin.getUsername(), newAdmin.getPassword());
+        return ResponseEntity.status(201).body("Admin registered successfully: " + savedAdmin.getUsername());
+    }
 }
